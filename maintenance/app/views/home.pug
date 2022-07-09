@@ -1,0 +1,28 @@
+extends layouts/layout.pug
+
+block append main
+    div.branding_accueil 
+        div.accueil
+            h1.title_home backend land           
+
+        div.incidents-list
+            
+            table.incident
+                tr
+                    th Incident numéro
+                    th Attraction numéro 
+                    th Description
+                    th Nom de l'opérateur
+                    th Date de la résolution
+                    th Lien
+                -for (const result of results)  {
+                    tr
+                        td #{result.id}
+                        td #{result.attraction_id}
+                        td #{result.description}
+                        td #{result.operator_name}
+                        td #{result.end_time_resolution}
+                        td 
+                            a.incident-link(href=`/incident/${result.id}`) Modifier
+                - }
+

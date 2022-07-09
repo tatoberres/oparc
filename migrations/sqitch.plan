@@ -1,0 +1,8 @@
+%syntax-version=1.0.0
+%project=oparc
+
+init 2022-03-07T11:56:27Z patrickletourneux <patrick.letourneux20@gmail.com> # creation des tables
+check 2022-03-07T13:35:33Z patrickletourneux <patrick.letourneux20@gmail.com> # add checks
+view_open_attraction 2022-03-07T19:59:02Z patrickletourneux <patrick.letourneux20@gmail.com> # add view open attraction return list of id
+visitor_res_notpassed 2022-03-07T20:28:15Z patrickletourneux <patrick.letourneux20@gmail.com> # visitor_reservation_not_passed
+view_closed_attraction 2022-03-08T10:22:27Z tatoberres <palm.sins@gmail.com> # view pour les attractions fermees

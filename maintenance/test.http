@@ -1,0 +1,48 @@
+################################################################################
+# Fichier de test des routes HTTP de l'API
+# Nécessite l'extension REST Client pour VSCode
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+################################################################################
+@host = http://localhost:{{$dotenv PORT}}
+
+# Listing des incidents en cours
+# => Render HTML
+### GET /
+GET {{host}}/
+
+# détails d'un incident + formulaire pour changer son avancement, assigner un technicien ou fermer l'incident
+# => Render HTML
+### GET /incident/:id
+GET {{host}}/incident/2
+
+# cible du formulaire de modification d'incident, répercute les changements et redirige sur la page incident
+# => Redirection HTTP
+### POST /incident/:id
+POST {{host}}/incident/2
+Content-Type: application/json
+
+{
+    "id": 2,
+    "description": "le rollercoaster est trop rouillé",
+    "operator_name": "jean-yves",
+    "end_time_resolution": "2022-05-21 18:01:07.6503+01",
+    "attraction_id": 2
+}
+
+# formulaire d'ouverture d'incident
+# => Render HTML
+### GET /incident/new
+GET {{host}}/incident/new
+
+# Cible du formulaire de création d'incident, crée l'incident puis redirige sur la page de cet incident
+# => redirection HTTP
+### POST /incident/new
+POST {{host}}/incident/new
+Content-Type: application/json
+
+{
+    "description": "La grande roue a perdue une cabine avec des gens dedans",
+    "operator_name": "marceline mécano",
+    "end_time_resolution": null,
+    "attraction_id": 3
+}

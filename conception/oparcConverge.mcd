@@ -1,0 +1,11 @@
+achete , 11 RESERVATION, 0N VISITEUR
+RESERVATION : code reservation, date de début de validité, date de fin de validité, nombre d accompagnant, horaire de réservation
+réserve, 0N ATTRACTION, 11 RESERVATION
+
+VISITEUR: code visiteur, nom,prenom,mail,numero telephone
+:
+ATTRACTION: code attraction,nom public, capacité, heure d'ouverture, heure de fermeture, durée
+
+:
+INCIDENT: code incident, nature, technicien assigné, date de résolution
+impacte, 11 INCIDENT, 0N ATTRACTION : date et heure de constat

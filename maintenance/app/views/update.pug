@@ -1,0 +1,46 @@
+extends layouts/layout.pug
+
+block append main
+    div.branding_accueil 
+        div.accueil
+            h1.title_home backend land           
+
+        div.incidents-list
+            table.incident
+                tr
+                    th Incident numéro
+                    th Attraction numéro 
+                    th Description
+                    th Nom de l'opérateur
+                    th Date de la résolution
+                tr
+                    td #{result.id}
+                    td #{result.attraction_id}
+                    td #{result.description}
+                    td #{result.operator_name}
+                    td #{result.end_time_resolution}
+
+        form(action=`/incident/${result.id}` method="POST")
+            div 
+                p
+                    label(for="attraction_id") Numéro/id de l'attraction
+                p
+                    input(type="text", name="attraction_id", id="attraction_id", value=`${result.attraction_id}`)
+            div
+                p
+                    label(for="description") Description de l'incident
+                p
+                    textarea(type="text" name="description" id="description", cols="30", rows="10") #{result.description}
+            div
+                p
+                    label(for="operator_name") Nom de l'opérateur
+                p
+                    input(type="text" name="operator_name" id="operator_name", value=`${result.operator_name}`)
+            div
+                p
+                    label(for="end_time_resolution") Date de résolution #{result.end_time_resolution}
+                p
+                    input(type="datetime-local" name="end_time_resolution" id="end_time_resolution")
+            
+
+            button valider

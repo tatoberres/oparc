@@ -1,0 +1,26 @@
+{
+  "name": "data-oparc-patrickletourneux",
+  "version": "1.0.0",
+  "description": "Ça y est, on connaît tout ce qu'il nous faut pour coder l'API d'O'parc de A à Z. C'est parti pour 2 jours de code et de SQL non-stop.",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/O-clock-Zagreus/data-oparc-patrickletourneux.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/O-clock-Zagreus/data-oparc-patrickletourneux/issues"
+  },
+  "homepage": "https://github.com/O-clock-Zagreus/data-oparc-patrickletourneux#readme",
+  "dependencies": {
+    "bunyan": "^1.8.15",
+    "debug": "^4.3.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "pg": "^8.7.3"
+  }
+}

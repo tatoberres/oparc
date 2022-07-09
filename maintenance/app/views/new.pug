@@ -1,0 +1,15 @@
+extends layouts/layout.pug
+
+block append main
+    div.new
+        h1.title_home Add an incident
+
+        form(action="http://localhost:3000/incident/new" method="POST")
+            p description:
+            textarea(name="description", cols="25", rows="5") 
+            //- input(type="textarea" name="description" placeholder="")
+            p operator_name:
+            input(type="text" name="operator_name" placeholder="")
+            p attraction_id:
+            input(type="number" name="attraction_id" placeholder="")
+            input(type="submit")

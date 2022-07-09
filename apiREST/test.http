@@ -1,0 +1,26 @@
+################################################################################
+# Fichier de test des routes HTTP de l'API
+# Nécessite l'extension REST Client pour VSCode
+# https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+################################################################################
+@host = http://localhost:{{$dotenv PORT}}
+
+### GET /init
+GET {{host}}/init/1
+
+### GET /events
+GET {{host}}/events
+
+### GET /booking/4
+GET {{host}}/bookings/4
+
+### POST /v1/cadex
+PUT {{host}}/book
+Content-Type: application/json
+
+{
+    "visitor_id": 2,
+    "attraction_id": 1,
+    "companions": 1,
+    "reservation_time": "00:10:00"
+}
